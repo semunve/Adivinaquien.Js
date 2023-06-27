@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pantalla.css">
+   
+    <title>Document</title>
+</head>
+<body>
+  <div class="container">
+
+    <div class="imagenes" id="div1">
+      <img src="/imagenes/Batman.jpg" alt="" id="img1">
+      <img src="/imagenes/Crash.jpg" alt="" id="img2">
+      <img src="/imagenes/Daisy.jpg" alt="" id="img3">
+      <img src="/imagenes/Link.jpeg" alt="" id="img4">
+      <img src="/imagenes/Elsa.jpg" alt="" id="img5">
+      <img src="/imagenes/Mario.jpg" alt="" id="img6">
+      <img src="/imagenes/Minnie.png" alt="" id="img7">
+      <img src="/imagenes/Naruto.jpg" alt="" id="img8">
+      <img src="/imagenes/Woody.jpg" alt="" id="img9">
+      <img src="/imagenes/Timon.jpg" alt="" id="img10">
+      <img src="/imagenes/Spider.jpg" alt="" id="img11">
+      <img src="/imagenes/Harry.jpeg" alt="" id="img12">
+      
+    </div>
+    
+    
+    <div>
+      
+      <input type="text" id="responde" readonly>
+    </div>
+    
+    
+    
+    <div class="preguntas" id="div2">
+      <button id="p1">¿Es rubio/a?</button>
+      <button id="p2">¿Lleva máscara?</button>
+      <button id="p3">¿Es una chica?</button>
+      <button id="p4">¿Lleva gorro?</button>
+      <button id="p5">¿Es un animal?</button>
+      <br>
+      <button id="resolve">Resolver</button>
+      
+      
+    </div>
+  </div>
+     
+<script>
+ alert("¡Saludos y bienvenido/a! Echemos una partida! \n Intenta adivinar el personaje \n ¡Espero que te guste! ")
+</script> 
+ 
+
+     <script>
+//array perosonajes
+var personajes=["Batman", "Crash","Daisy","Link","Elsa","Mario","Minnie","Naruto","Woody","Timon","Spiderman","Harry"]
+function seleccionaPersonaje(){
+    var aleatorio=Math.floor(Math.random()*personajes.length)
+    return personajes[aleatorio]
+}
+var pseleccionado=seleccionaPersonaje()
+console.log("El personaje elegido es " + pseleccionado)
+
+//Lógica preguntas
+document.getElementById("p1").addEventListener("click", function() {
+  var respuestaElement = document.getElementById("responde");
+
+ 
+  
+  if (pseleccionado == "Link" || pseleccionado == "Naruto" || pseleccionado == "Elsa") {
+ 
+ respuestaElement.value="Si, es rubio"
+ 
+
+  } else {
+    
+    respuestaElement.value="No es rubio"
+    
+    
+  }
+
+ 
+ 
+});
+
+document.getElementById("p2").addEventListener("click", function() {
+  var respuestaElement = document.getElementById("responde");
+
+ if(pseleccionado=="Batman" || pseleccionado=="Spiderman"){
+    respuestaElement.value="Si,lleva máscara"
+  }else{
+    respuestaElement.value="No lleva máscara"
+  }
+});
+
+
+document.getElementById("p3").addEventListener("click",function() {
+  var respuestaElement=document.getElementById("responde")
+if(pseleccionado=="Daisy"||pseleccionado=="Elsa" || pseleccionado=="Minnie"){
+respuestaElement.value="Si,es una chica"
+}else{
+  respuestaElement.value="No es una chica"
+}
+
+});
+
+document.getElementById("p4").addEventListener("click", function(){
+  var respuestaElement=document.getElementById("responde")
+
+  if(pseleccionado=="Mario" || pseleccionado=="Woody"|| pseleccionado=="Link"){
+    respuestaElement.value="Si,lleva gorro"
+  }else{
+    respuestaElement.value="No lleva gorro"
+  }
+
+});
+
+document.getElementById("p5").addEventListener("click",function(){
+var respuestaElement=document.getElementById("responde")
+
+if(pseleccionado=="Crash" || pseleccionado=="Daisy" ||pseleccionado=="Minnie" ||pseleccionado=="Timon"){
+  respuestaElement.value="Si, es un animal"
+}else{
+  respuestaElement.value="No es un animal"
+}
+})
+
+//Boton para resolver
+
+document.getElementById("resolve").addEventListener("click",function(){
+  var responder=prompt("¿Cual crees que es el personaje elegido?")
+
+  if(pseleccionado.toLowerCase()==responder.toLowerCase()){
+     console.log("correcto")
+     alert("Correcto el personaje es " + pseleccionado)
+
+   
+     
+  }
+ else{
+  console.log("Incorrecto")
+  alert("Incorrecto,prueba de nuevo")
+ }
+})
+
+
+
+
+
+//difuminado de imagenes
+        var img1=document.getElementById("img1")
+       img1.addEventListener("click",function(){
+        img1.classList.toggle("blur")
+       })
+
+       var img2=document.getElementById("img2")
+       img2.addEventListener("click",function(){
+        img2.classList.toggle("blur")
+       })
+
+       var img3=document.getElementById("img3")
+       img3.addEventListener("click",function(){
+        img3.classList.toggle("blur")
+       })
+       var img4=document.getElementById("img4")
+       img4.addEventListener("click",function(){
+        img4.classList.toggle("blur")
+       })
+
+       var img5=document.getElementById("img5")
+       img5.addEventListener("click",function(){
+        img5.classList.toggle("blur")
+       })
+
+       var img6=document.getElementById("img6")
+       img6.addEventListener("click", function(){
+        img6.classList.toggle("blur")
+       })
+
+       var img7=document.getElementById("img7")
+       img7.addEventListener("click",function(){
+        img7.classList.toggle("blur")
+       })
+
+       var img8=document.getElementById("img8")
+       img8.addEventListener("click",function(){
+        img8.classList.toggle("blur")
+       })
+
+       var img9=document.getElementById("img9")
+       img9.addEventListener("click",function(){
+        img9.classList.toggle("blur")
+       })
+
+
+       var img10=document.getElementById("img10")
+       img10.addEventListener("click",function(){
+        img10.classList.toggle("blur")
+       })
+
+       var img11=document.getElementById("img11")
+       img11.addEventListener("click",function(){
+        img11.classList.toggle("blur")
+       })
+
+       var img12=document.getElementById("img12")
+       img12.addEventListener("click", function(){
+        img12.classList.toggle("blur")
+       })
+
+            </script>
+
+
+
+
+</body>
+
+
+</html>
